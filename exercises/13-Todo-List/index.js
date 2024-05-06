@@ -7,13 +7,20 @@ document.getElementById("addToDo").addEventListener("keypress", function(event){
         console.log(currentWord)
         document.getElementById("addToDo").value = ""
 
-        const readyUl = document.querySelector("ul")
-        let createUl = document.createElement("li")
-        createUl.innerHTML = currentWord
-        readyUl.appendChild(createUl)
+        let readyUl = document.querySelector("ul")
+        let createLi = document.createElement("li")
+
+        let spanElement = document.createElement("span")
+        spanElement.innerHTML = `<i class="fa fa-trash"></i>`
+
+        createLi.textContent = currentWord
+
+        createLi.insertBefore(spanElement, createLi.firstChild);
+        
+        console.log(readyUl.appendChild(createLi))
+
     }
 })
-
 
 // remove child
 const button = document.querySelector("ul")
